@@ -9,7 +9,7 @@ const Header = () => {
   const setMenuIsOpen = useThemeStore( state => state.setMenuIsOpen );
 
   return (
-    <header className={cn("bg-light-100 h-20 flex items-center fixed top-0 left-0 w-full shadow-sm")}>
+    <header className={cn("bg-light-100 h-20 flex items-center fixed top-0 left-0 w-full shadow-sm z-10")}>
       <div className="w-content flex items-center justify-center">
         <p className="text-secondary font-black text-3xl">
           Nov<span className="text-primary">tiq</span>

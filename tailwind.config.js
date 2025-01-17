@@ -20,10 +20,13 @@ export default {
         }
       },
       width: {
-        content: "330px"
+        content: "280px"
+      },
+      height: {
+        chart: "500px"
       },
       padding: {
-        content: "330px"
+        content: "280px"
       }
     },
   },
