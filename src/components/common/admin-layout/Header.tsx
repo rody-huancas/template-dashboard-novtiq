@@ -1,11 +1,15 @@
 import { cn } from "@/utils/general.util";
 import { Input } from "@/components/ui/input/Input";
 import { Button } from "@/components/ui/button/Button";
+import { useThemeStore } from "@/store/theme/useTheme";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 
 const Header = () => {
+  const menuIsOpen = useThemeStore( state => state.menuIsOpen );
+  const setMenuIsOpen = useThemeStore( state => state.setMenuIsOpen );
+
   return (
-    <header className={cn("bg-light-100 h-20 flex items-center fixed top-0 left-0 w-full")}>
+    <header className={cn("bg-light-100 h-20 flex items-center fixed top-0 left-0 w-full shadow-sm")}>
       <div className="w-content flex items-center justify-center">
         <p className="text-secondary font-black text-3xl">
           Nov<span className="text-primary">tiq</span>
@@ -14,7 +18,7 @@ const Header = () => {
 
       <div className="flex items-center justify-between flex-1 px-7">
         <div className="flex items-center gap-10">
-          <Button size="icon" variant="ghost">
+          <Button size="icon" variant="ghost" onClick={() => setMenuIsOpen(!menuIsOpen)}>
             <HiOutlineMenuAlt1 size={20} />
           </Button>
           <Input placeholder="Buscar..." variant="flat" />

@@ -18,6 +18,7 @@
       "@/modules/*"   : ["modules/*"],
       "@/router/*"    : ["router/*"],
       "@/schemas/*"   : ["schemas/*"],
+      "@/store/*"     : ["store/*"],
       "@/utils/*"     : ["utils/*"],
     },
     

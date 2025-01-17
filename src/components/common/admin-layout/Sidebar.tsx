@@ -1,12 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
-import { ITEMS_MENU } from "@/data/menu";
+
 import { cn } from "@/utils/general.util";
+import { ITEMS_MENU } from "@/data/menu";
+import { useThemeStore } from "@/store/theme/useTheme";
 
 const Sidebar = () => {
   const location = useLocation();
+  const menuIsOpen = useThemeStore( state => state.menuIsOpen );
 
   return (
-    <aside className="w-content h-dvh fixed top-20 left-0 bg-light-100">
+    <aside className={cn("w-content h-dvh fixed top-20 bg-light-100 transition-all duration-500 ease-in-out", menuIsOpen ? "left-0" : "-left-full")}>
       <nav className="w-full py-5">
         <ul className="flex flex-col">
           {ITEMS_MENU.map((item) => (
