@@ -9,9 +9,9 @@ const Sidebar = () => {
   const menuIsOpen = useThemeStore( state => state.menuIsOpen );
 
   return (
-    <aside className={cn("w-content h-dvh fixed top-20 bg-light-100 transition-all duration-500 ease-in-out", menuIsOpen ? "left-0" : "-left-full")}>
-      <nav className="w-full py-5">
-        <ul className="flex flex-col">
+    <aside className={cn("w-content h-dvh overflow-y-scroll fixed top-20 bg-light-100 transition-all duration-500 ease-in-out", menuIsOpen ? "left-0" : "-left-full")}>
+      <nav className="w-full pt-5 pb-14">
+        <ul className="flex flex-col gap-1">
           {ITEMS_MENU.map((item) => (
             <li
               key={item.name}

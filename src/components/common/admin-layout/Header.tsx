@@ -2,7 +2,7 @@ import { cn } from "@/utils/general.util";
 import { Input } from "@/components/ui/input/Input";
 import { Button } from "@/components/ui/button/Button";
 import { useThemeStore } from "@/store/theme/useTheme";
-import { HiOutlineMenuAlt1 } from "react-icons/hi";
+import { RiMenuUnfold2Fill, RiMenuUnfold3Fill } from "react-icons/ri";
 
 const Header = () => {
   const menuIsOpen = useThemeStore( state => state.menuIsOpen );
@@ -19,7 +19,7 @@ const Header = () => {
       <div className="flex items-center justify-between flex-1 px-7">
         <div className="flex items-center gap-10">
           <Button size="icon" variant="ghost" onClick={() => setMenuIsOpen(!menuIsOpen)}>
-            <HiOutlineMenuAlt1 size={20} />
+            { menuIsOpen ? <RiMenuUnfold2Fill size={20} /> : <RiMenuUnfold3Fill size={20} /> }
           </Button>
           <Input placeholder="Buscar..." variant="flat" />
         </div>
