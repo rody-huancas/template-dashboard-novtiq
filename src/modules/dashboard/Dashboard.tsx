@@ -1,9 +1,12 @@
 import { Title } from "@/components/ui/title/Title";
 import { MetricCard } from "@/components/modules/dashboard/MetricCard";
+import SalesDetailChart from "@/components/modules/dashboard/SalesDetailChart";
 
 import { FaBoxOpen } from "react-icons/fa";
 import { HiMiniUsers } from "react-icons/hi2";
 import { LuChartSpline } from "react-icons/lu";
+import SalesAndProfitChart from "@/components/modules/dashboard/SalesAndProfitChart";
+import SalesDistributionChart from "@/components/modules/dashboard/SalesDistributionChart";
 
 const Dashboard = () => {
   return (
@@ -12,7 +15,7 @@ const Dashboard = () => {
         Dashboard
       </Title>
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         <MetricCard
           icon={HiMiniUsers}
           title="Usuarios Totales"
@@ -45,6 +48,20 @@ const Dashboard = () => {
           trend={{ value: 1.8, text: "desde ayer", isPositive: true }}
           iconColor="orange"
         />
+      </div>
+
+      <div className="grid lg:grid-cols-3 gap-x-10">
+        <div className="w-full h-full col-span-2">
+          <SalesDetailChart />
+        </div>
+
+        <div className="w-full h-full">
+          <SalesDistributionChart />
+        </div>
+      </div>
+
+      <div className="w-full h-full">
+        <SalesAndProfitChart />
       </div>
     </div>
   );
