@@ -1,21 +1,31 @@
 import { Title } from "@/components/ui/title/Title";
 import { MetricCard } from "@/components/modules/dashboard/MetricCard";
 import SalesDetailChart from "@/components/modules/dashboard/SalesDetailChart";
-
-import { FaBoxOpen } from "react-icons/fa";
-import { HiMiniUsers } from "react-icons/hi2";
-import { LuChartSpline } from "react-icons/lu";
 import SalesAndProfitChart from "@/components/modules/dashboard/SalesAndProfitChart";
 import SalesDistributionChart from "@/components/modules/dashboard/SalesDistributionChart";
 
+import { cn } from "@/utils/general.util";
+import { useThemeStore } from "@/store/theme/useTheme";
+import { FaBoxOpen } from "react-icons/fa";
+import { HiMiniUsers } from "react-icons/hi2";
+import { LuChartSpline } from "react-icons/lu";
+import { TableProductDashboard } from "@/components/modules/dashboard/TableProductDashboard";
+
 const Dashboard = () => {
+  const menuIsOpen = useThemeStore((state) => state.menuIsOpen);
+
   return (
     <div className="space-y-5">
       <Title level={3} size="h3">
         Dashboard
       </Title>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <div
+        className={cn(
+          "grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5",
+          menuIsOpen && "sm:grid-cols-1"
+        )}
+      >
         <MetricCard
           icon={HiMiniUsers}
           title="Usuarios Totales"
@@ -50,8 +60,10 @@ const Dashboard = () => {
         />
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-x-10">
-        <div className="w-full h-full col-span-2">
+      <div className={cn("grid lg:grid-cols-2 xl:grid-cols-3 gap-5",
+        menuIsOpen && "lg:grid-cols-1"
+      )}>
+        <div className="w-full h-full xl:col-span-2">
           <SalesDetailChart />
         </div>
 
@@ -63,6 +75,8 @@ const Dashboard = () => {
       <div className="w-full h-full">
         <SalesAndProfitChart />
       </div>
+
+      <TableProductDashboard />
     </div>
   );
 };
