@@ -18,8 +18,8 @@ const COLORS: string[] = ["#6EA8FE", "#74C69D", "#FFD166", "#FF7F51"];
 
 const SalesDistributionChart: React.FC = () => {
   return (
-    <div className="bg-white rounded-lg shadow-md">
-      <div className="px-8 py-6">
+    <div className="bg-white rounded-lg">
+      <div className="px-8 py-7">
         <Title size="h5">Distribución de ventas</Title>
       </div>
 
