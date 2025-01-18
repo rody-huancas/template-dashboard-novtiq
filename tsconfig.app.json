@@ -19,6 +19,7 @@
       "@/router/*"    : ["router/*"],
       "@/schemas/*"   : ["schemas/*"],
       "@/store/*"     : ["store/*"],
+      "@/styles/*"    : ["styles/*"],
       "@/utils/*"     : ["utils/*"],
     },
     
