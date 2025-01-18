@@ -67,8 +67,8 @@ export const ProductCard = (props: Props) => {
           <button className="p-3 rounded-full bg-gray-500/15">
             { 
               isFavorite 
-                ? <MdFavoriteBorder className="text-dark-100" />
-                : <MdOutlineFavorite className="text-red-500" />
+                ? <MdOutlineFavorite className="text-red-500" />
+                : <MdFavoriteBorder className="text-dark-100" />
             }
           </button>
         </div>
