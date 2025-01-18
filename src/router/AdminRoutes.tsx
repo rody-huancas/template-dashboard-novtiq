@@ -5,6 +5,8 @@ import AdminLayout from "@/layouts/admin/AdminLayout";
 import Dashboard from "@/modules/dashboard/Dashboard";
 
 const ProductsPage = lazy(() => import("@/modules/products/ProductsPage"));
+const FavoritesPage = lazy(() => import("@/modules/favorites/FavoritesPage"));
+const InboxPage = lazy(() => import("@/modules/inbox/InboxPage"));
 
 const AdminRoutes = () => {
   return (
@@ -17,6 +19,22 @@ const AdminRoutes = () => {
             element={
               <Suspense fallback={<div>Loading...</div>}>
                 <ProductsPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/favorites"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <FavoritesPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/inbox"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <InboxPage />
               </Suspense>
             }
           />
