@@ -1,7 +1,7 @@
-import TableProductDashboard from "@/components/modules/dashboard/TableProductDashboard";
+import { Title } from "@/components/ui/title/Title";
 import { OrderListTable } from "@/components/modules/order-list/OrderListTable";
 import UserTable from "@/components/modules/tables/UserTable";
-import { Title } from "@/components/ui/title/Title";
+import TableProductDashboard from "@/components/modules/dashboard/TableProductDashboard";
 
 const TablesPage = () => {
   return (
