@@ -2,10 +2,11 @@ import { useState } from "react";
 /* Components */
 import { Email } from "@/components/modules/inbox/types";
 import { InboxHeader } from "@/components/modules/inbox/InboxHeader";
-import { InboxSidebar } from "@/components/modules/inbox/inboxSidebar";
+import { InboxSidebar } from "@/components/modules/inbox/InboxSidebar";
 import { InboxEmailList } from "@/components/modules/inbox/InboxEmailList";
 /* Data */
 import { inboxData } from "@/data/inboxData";
+import { Title } from "@/components/ui/title/Title";
 
 const InboxPage = () => {
   const [activeTab, setActiveTab] = useState("inbox");
@@ -34,18 +35,24 @@ const InboxPage = () => {
   };
 
   return (
-    <div className="bg-gray-50 flex overflow-y-scroll custom-scrollbar">
-      <InboxSidebar activeTab={activeTab} onTabChange={setActiveTab} />
-      <div className="flex-1">
-        <InboxHeader />
-        <div className="p-4">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">
-            {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
-          </h2>
-          <InboxEmailList
-            emails={getFilteredEmails()}
-            onStarEmail={handleStarEmail}
-          />
+    <div className="space-y-10">
+       <Title level={3} size="h3">
+        Bandeja de Entrada
+      </Title>
+
+      <div className="bg-gray-50 flex overflow-y-scroll custom-scrollbar">
+        <InboxSidebar activeTab={activeTab} onTabChange={setActiveTab} />
+        <div className="flex-1">
+          <InboxHeader />
+          <div className="p-4">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">
+              {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
+            </h2>
+            <InboxEmailList
+              emails={getFilteredEmails()}
+              onStarEmail={handleStarEmail}
+            />
+          </div>
         </div>
       </div>
     </div>

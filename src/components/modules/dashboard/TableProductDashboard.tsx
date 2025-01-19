@@ -7,7 +7,7 @@ import { dashboardData } from "@/data/dashboardData";
 const TableProductDashboard = () => {
   return (
     <div className="flex flex-col gap-5 p-5 rounded-lg bg-light-100">
-      <Title size="h5">Últimos Productos</Title>
+      <Title size="h5">Stock de Productos</Title>
 
       <DataTable columns={columnsProductDashboard} data={dashboardData.table.data} />
     </div>

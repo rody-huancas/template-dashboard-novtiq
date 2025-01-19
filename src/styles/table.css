@@ -1,6 +1,5 @@
 .custom-scrollbar {
-  max-height: 70vh;
-  overflow: auto;
+  overflow-x: auto;
 
   scrollbar-width: thin;
   scrollbar-color: #cbd5e1 transparent;
