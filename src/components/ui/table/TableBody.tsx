@@ -13,7 +13,7 @@ export const TableBody = <TData,>({ rows }: TableBodyProps<TData>) => {
           className="border-b border-gray-50 last:border-0 hover:bg-gray-50/50"
         >
           {row.getVisibleCells().map((cell) => (
-            <td key={cell.id} className="px-6 py-4 text-sm text-gray-600">
+            <td key={cell.id} className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">
               {flexRender(cell.column.columnDef.cell, cell.getContext())}
             </td>
           ))}

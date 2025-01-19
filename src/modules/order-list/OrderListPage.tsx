@@ -1,9 +1,7 @@
-import DataTable from "@/components/ui/table/Table";
 import { Title } from "@/components/ui/title/Title";
-import { columnsOrderList } from "@/components/modules/order-list/columnsOrderList";
-import { orderListData } from "@/data/order-list";
 import { Input } from "@/components/ui/input/Input";
 import { Button } from "@/components/ui/button/Button";
+import { OrderListTable } from "@/components/modules/order-list/OrderListTable";
 
 const OrderListPage = () => {
   return (
@@ -24,9 +22,7 @@ const OrderListPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 p-5 rounded-lg bg-light-100 overflow-x-scroll custom-scrollbar">
-        <DataTable columns={columnsOrderList} data={orderListData} />
-      </div>
+      <OrderListTable />
     </div>
   );
 };

@@ -28,9 +28,9 @@ export const ITEMS_MENU = [
       { name: "Tareas", to: "/to-do", icon: <MdOutlineCalendarToday size={15} /> },
       { name: "Contacto", to: "/contact", icon: <MdOutlineContactMail size={15} /> },
       { name: "Facturas", to: "/invoices", icon: <FaFileInvoice size={15} /> },
-      { name: "Componentes UI", to: "/ui-elements", icon: <MdOutlineTableChart size={15} /> },
+      { name: "Elementos UI", to: "/ui-elements", icon: <MdOutlineTableChart size={15} /> },
       { name: "Equipo", to: "/team", icon: <FaUserFriends size={15} /> },
-      { name: "Tabla", to: "/table", icon: <MdOutlineTableChart size={15} /> },
+      { name: "Tablas", to: "/table", icon: <MdOutlineTableChart size={15} /> },
     ],
   },
   {
