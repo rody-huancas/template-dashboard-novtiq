@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AdminLayout from "@/layouts/admin/AdminLayout";
 import Dashboard from "@/modules/dashboard/Dashboard";
+import { Spinner } from "@/components/ui/loader/Spinner";
 
 const routes = {
   products    : lazy(() => import("@/modules/products/ProductsPage")),
@@ -11,10 +12,11 @@ const routes = {
   productStock: lazy(() => import("@/modules/product-stock/ProductStockPage")),
   pricing     : lazy(() => import("@/modules/pricing/PrincingPage")),
   calendar    : lazy(() => import("@/modules/calendar/CalendarPage")),
+  tasks       : lazy(() => import("@/modules/tasks/TasksPage")),
 };
 
 const LazyLoadWrapper = ({ children }: { children: React.ReactNode }) => (
-  <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+  <Suspense fallback={<Spinner />}>{children}</Suspense>
 );
 
 const routeConfig = [
@@ -25,6 +27,7 @@ const routeConfig = [
   { path: "product-stock", Component: routes.productStock },
   { path: "pricing", Component: routes.pricing },
   { path: "calendar", Component: routes.calendar },
+  { path: "to-do", Component: routes.tasks },
 ] as const;
 
 const AdminRoutes = () => {
