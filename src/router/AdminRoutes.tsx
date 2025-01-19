@@ -14,6 +14,7 @@ const routes = {
   calendar    : lazy(() => import("@/modules/calendar/CalendarPage")),
   tasks       : lazy(() => import("@/modules/tasks/TasksPage")),
   contact     : lazy(() => import("@/modules/contact/ContactPage")),
+  invoice     : lazy(() => import("@/modules/invoice/InvoicePage")),
 };
 
 const LazyLoadWrapper = ({ children }: { children: React.ReactNode }) => (
@@ -30,6 +31,7 @@ const routeConfig = [
   { path: "calendar", Component: routes.calendar },
   { path: "to-do", Component: routes.tasks },
   { path: "contact", Component: routes.contact },
+  { path: "invoices", Component: routes.invoice },
 ] as const;
 
 const AdminRoutes = () => {
