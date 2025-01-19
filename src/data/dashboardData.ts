@@ -7,33 +7,33 @@ type IconColor = "yellow" | "green" | "indigo" | "orange";
 type Status = "Enviado" | "Pendiente" | "Cancelado";
 
 interface Metric {
-  icon : IconType;
+  icon: IconType;
   title: string;
   value: string | number;
   trend: {
-    value     : number;
-    text      : string;
+    value: number;
+    text: string;
     isPositive: boolean;
   };
   iconColor: IconColor;
 }
 
 interface Product {
-  id         : string;
+  id: string;
   productName: string;
-  location   : string;
-  dateTime   : string;
-  piece      : number;
-  amount     : number;
-  status     : Status;
-  image      : string;
+  location: string;
+  dateTime: string;
+  piece: number;
+  amount: number;
+  status: Status;
+  image: string;
 }
 
 interface DashboardData {
   metrics: Metric[];
-  table  : {
+  table: {
     title: string;
-    data : Product[];
+    data: Product[];
   };
 }
 
@@ -123,6 +123,83 @@ export const dashboardData: DashboardData = {
         status: "Enviado",
         image:
           "https://pe.tiendasishop.com/cdn/shop/files/IMG-13190722_7e2cb349-6c23-41ad-bab8-0b7809ea434b.jpg",
+      },
+      {
+        id: "6",
+        productName: "MacBook Pro M3",
+        location: "9985 Calle San Ignacio",
+        dateTime: "12.10.2019 - 10:00 AM",
+        piece: 89,
+        amount: 2800.0,
+        status: "Enviado",
+        image:
+          "https://www.isolutionsperu.com/wp-content/uploads/mbp-spacegray-select-202011.jpg",
+      },
+      {
+        id: "7",
+        productName: "iPhone 15 Pro Max",
+        location: "4621 Avenida de los Sueños",
+        dateTime: "12.10.2019 - 11:30 AM",
+        piece: 150,
+        amount: 1299.0,
+        status: "Pendiente",
+        image:
+          "https://claroperupoc.vtexassets.com/arquivos/ids/1898529/naturaltt3.png",
+      },
+      {
+        id: "8",
+        productName: "iPad Pro 12.9",
+        location: "2345 Calle del Sol",
+        dateTime: "12.10.2019 - 1:20 PM",
+        piece: 200,
+        amount: 1099.0,
+        status: "Cancelado",
+        image:
+          "https://pe.tiendasishop.com/cdn/shop/files/iPad_Pro_Wi-Fi_12-9_in_6th_generation_Space_Gray_PDP_Image_Position-1b__MXLA.jpg",
+      },
+      {
+        id: "9",
+        productName: "Mac mini M2",
+        location: "3456 Calle Luna Nueva",
+        dateTime: "12.11.2019 - 9:15 AM",
+        piece: 190,
+        amount: 599.0,
+        status: "Enviado",
+        image:
+          "https://pe.tiendasishop.com/cdn/shop/files/IMG-8294195_0478762b-676f-436a-b36b-2ed10d96ff1e.jpg",
+      },
+      {
+        id: "10",
+        productName: 'iMac 24"',
+        location: "7123 Camino Verde",
+        dateTime: "12.11.2019 - 2:30 PM",
+        piece: 75,
+        amount: 1299.0,
+        status: "Pendiente",
+        image:
+          "https://rimage.ripley.com.pe/home.ripley/Attachment/MKP/3083/PMP20000222202/full_image-1.jpeg",
+      },
+      {
+        id: "11",
+        productName: "AirPods Max",
+        location: "6542 Avenida Azul",
+        dateTime: "12.12.2019 - 1:45 PM",
+        piece: 230,
+        amount: 549.0,
+        status: "Enviado",
+        image:
+          "https://mac-center.com.pe/cdn/shop/files/AirPods_Max_2024_Basalt_Black_PDP_Image_Position_01__GENS_cb3604b3-39d6-4ffb-becd-4e9c02740a4a.jpg",
+      },
+      {
+        id: "12",
+        productName: "Magic Keyboard",
+        location: "3456 Calle Real",
+        dateTime: "12.12.2019 - 3:00 PM",
+        piece: 300,
+        amount: 99.0,
+        status: "Pendiente",
+        image:
+          "https://pe.tiendasishop.com/cdn/shop/files/IMG-13087526_c14539da-04f6-466e-bc6f-429d13b57795.jpg",
       },
     ],
   },
