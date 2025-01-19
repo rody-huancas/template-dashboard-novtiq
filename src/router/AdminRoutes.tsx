@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AdminLayout from "@/layouts/admin/AdminLayout";
 import Dashboard from "@/modules/dashboard/Dashboard";
 import { Spinner } from "@/components/ui/loader/Spinner";
+import NotFound from "@/modules/not-found/NotFound";
 
 const routes = {
   products    : lazy(() => import("@/modules/products/ProductsPage")),
@@ -52,6 +53,7 @@ const AdminRoutes = () => {
             />
           ))}
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
