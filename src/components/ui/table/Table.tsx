@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { ColumnDef } from "@tanstack/react-table";
-import { getCoreRowModel, useReactTable, getSortedRowModel, SortingState, getPaginationRowModel } from "@tanstack/react-table";
+import {
+  getCoreRowModel,
+  useReactTable,
+  getSortedRowModel,
+  SortingState,
+  getPaginationRowModel,
+} from "@tanstack/react-table";
 /* Components */
 import { TableBody } from "./TableBody";
 import { Pagination } from "./TablePagination";
@@ -11,10 +17,12 @@ import "@/styles/table.css";
 export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  noPaginate?: boolean;
 }
 const DataTable = <TData, TValue>({
   columns,
   data,
+  noPaginate = false,
 }: DataTableProps<TData, TValue>) => {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [pageSize, setPageSize] = useState(5);
@@ -40,7 +48,14 @@ const DataTable = <TData, TValue>({
           <TableBody rows={table.getRowModel().rows} />
         </table>
       </div>
-      <Pagination table={table} pageSize={pageSize} setPageSize={setPageSize} />
+
+      {!noPaginate && (
+        <Pagination
+          table={table}
+          pageSize={pageSize}
+          setPageSize={setPageSize}
+        />
+      )}
     </div>
   );
 };
