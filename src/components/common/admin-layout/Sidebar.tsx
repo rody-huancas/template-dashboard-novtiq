@@ -40,7 +40,7 @@ const Sidebar = () => {
 
       <aside
         className={cn(
-          "w-content h-dvh overflow-y-scroll fixed top-20 bg-light-100 transition-all duration-500 ease-in-out z-40",
+          "w-content h-dvh overflow-y-scroll fixed top-20 bg-light-100 drop-shadow-md transition-all duration-500 ease-in-out z-40",
           menuIsOpen ? "left-0" : "-left-full"
         )}
       >

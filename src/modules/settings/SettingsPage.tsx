@@ -45,20 +45,35 @@ const SettingsPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             <InputSelect
               label="Frecuencia de notificación por correo"
-              options={["Inmediata", "Diaria", "Semanal", "Mensual"]}
-              selectedValue="Inmediata"
+              options={[
+                { value: "inmediata", label: "Inmediata" },
+                { value: "diaria", label: "Diaria" },
+                { value: "semanal", label: "Semanal" },
+                { value: "mensual", label: "Mensual" },
+              ]}
+              selectedValue="inmediata"
             />
 
             <InputSelect
               label="Frecuencia de notificación por Push"
-              options={["Inmediata", "Diaria", "Semanal", "Mensual"]}
-              selectedValue="Mensual"
+              options={[
+                { value: "inmediata", label: "Inmediata" },
+                { value: "diaria", label: "Diaria" },
+                { value: "semanal", label: "Semanal" },
+                { value: "mensual", label: "Mensual" },
+              ]}
+              selectedValue="mensual"
             />
 
             <InputSelect
               label="Frecuencia de notificación WhatsApp"
-              options={["Inmediata", "Diaria", "Semanal", "Mensual"]}
-              selectedValue="Semanal"
+              options={[
+                { value: "inmediata", label: "Inmediata" },
+                { value: "diaria", label: "Diaria" },
+                { value: "semanal", label: "Semanal" },
+                { value: "mensual", label: "Mensual" },
+              ]}
+              selectedValue="semanal"
               className="sm:col-span-2 md:col-span-1"
             />
           </div>
@@ -82,7 +97,7 @@ const SettingsPage = () => {
         </div>
 
         <div className="flex justify-end">
-          <Button className="w-full sm:w-auto">Guardar cambios</Button>
+          <Button className="px-10 h-12">Guardar Cambios</Button>
         </div>
       </div>
     </div>
