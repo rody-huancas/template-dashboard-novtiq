@@ -21,6 +21,7 @@ import { ElementsScrollArea } from "@/components/modules/elements-ui/ElementsScr
 import { ElementsSeparator } from "@/components/modules/elements-ui/ElementsSeparator";
 import { ElementsSkeleton } from "@/components/modules/elements-ui/ElementsSkeleton";
 import { TabsElements } from "@/components/ui/tab/Tab";
+import { ElementsCharts } from "@/components/modules/elements-ui/ElementsCharts";
 
 const ElementsUIPage = () => {
   const formElements = (
@@ -69,6 +70,12 @@ const ElementsUIPage = () => {
     </div>
   );
 
+  const chartsElements = (
+    <div className="space-y-7">
+      <ElementsCharts />
+    </div>
+  );
+
   const tabs = [
     {
       label: "Formularios",
@@ -89,6 +96,10 @@ const ElementsUIPage = () => {
     {
       label: "Visualización",
       content: dataDisplayElements,
+    },
+    {
+      label: "Gráficos",
+      content: chartsElements,
     },
   ];
 
