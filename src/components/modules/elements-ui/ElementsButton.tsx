@@ -9,7 +9,7 @@ export const ElementsButton = () => {
         Botones
       </Title>
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         <Button>Botón Normal</Button>
         <Button variant="default">Botón Default</Button>
         <Button variant="secondary">Botón Secundario</Button>
