@@ -4,6 +4,9 @@ import NotFound from "@/modules/not-found/NotFound";
 import Dashboard from "@/modules/dashboard/Dashboard";
 import AdminLayout from "@/layouts/admin/AdminLayout";
 import { Spinner } from "@/components/ui/loader/Spinner";
+import LoginPage from "@/modules/auth/LoginPage";
+import RegisterPage from "@/modules/register/RegisterPage";
+import ForgotPassword from "@/modules/forgot-password/ForgotPassword";
 
 const routes = {
   products    : lazy(() => import("@/modules/products/ProductsPage")),
@@ -47,6 +50,12 @@ const AdminRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
+        {/* AUTH */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+
+        {/* ADMIN */}
         <Route path="/" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
           {routeConfig.map(({ path, Component }) => (

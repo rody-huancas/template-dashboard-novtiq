@@ -4,8 +4,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import { Button } from "@/components/ui/button/Button";
 import { cn } from "@/utils/general.util";
 
-import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/swiper-bundle.css";
 
 interface PromoBanner {
   id: number;

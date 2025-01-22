@@ -5,8 +5,7 @@ import { formatMoney } from "@/utils/general.util";
 import { FaStar } from "react-icons/fa";
 import { MdFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 
-import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/swiper-bundle.css";
 
 interface Props {
   images?    : string[];
